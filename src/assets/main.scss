@@ -1,0 +1,91 @@
+@import url(https://unpkg.com/tailwindcss@2.0.1/dist/tailwind.min.css);
+// @import url(https://unpkg.com/tailwindcss@2.0.1/dist/base.min.css);
+// @import url(https://unpkg.com/tailwindcss@2.0.1/dist/components.min.css);
+// @import url(https://unpkg.com/tailwindcss@2.0.1/dist/utilities.min.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&display=swap');
+
+:root {
+  --color-background: var(--vt-c-white);
+
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-inputs: 'Segoe Print', sans-serif;
+  font-family: var(--font-family);
+  font-variant-numeric: tabular-nums;
+
+  // --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  // min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+input, select {
+  font-family: var(--font-inputs);
+  font-size: 80%;
+  padding: 0 1ch;
+  outline: none;
+  border: none;
+
+  &:not([disabled]):hover {
+    box-shadow: inset 0 -1px 0 black
+  }
+}
+
+.small-caps {
+  font-variant: small-caps;
+}
+.font-narrow {
+  font-family: 'Archivo Narrow', 'Arial Narrow', Arial, sans-serif;
+}
+.grow {
+  flex-grow: 1
+}
+
+.basis-3-5 {
+  flex-basis: 60%
+}
+
+strong {
+  font-weight: bolder;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin-right: -1ch;
+}
+
+input[type=number] {
+  appearance: textfield;
+}
